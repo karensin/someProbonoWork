@@ -1,6 +1,9 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import { Button } from 'react-bootstrap';
+import { NextPage } from 'next'
+import NavBarComponent from './components/NavBar'
+import Homepage from './Homepage';
 
 const Home: NextPage = () => {
   return (
@@ -10,11 +13,9 @@ const Home: NextPage = () => {
         <meta name="description" content="Your new app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Hello <a href="">Karen~!</a>
-        </h1>
+        <NavBarComponent />
+        <Homepage />
       </main>
     </div>
   )
