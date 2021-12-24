@@ -1,16 +1,19 @@
 .container {
   padding: 0  ;
 }
+.productSection{
+ padding-top:30px ; 
+ background-color:  #E5E5E5;
+}
 
 .main {
-  min-height: 100vh;
-  flex: 1;
+  /* min-height: 100vh; */
+  /* flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: start;
-  align-items:stretch;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  align-items:stretch; */
+ 
 }
 .landingText{
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -28,8 +31,7 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   
  }
  .coverImg{
-    width: 100%;
-    height: 100%;
+   width: 100%
  }
 .footer {
   display: flex;
@@ -132,4 +134,10 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     width: 100%;
     flex-direction: column;
   }
+}
+
+.productImage{
+  max-height: 330px;
+  overflow: hidden;
+
 }

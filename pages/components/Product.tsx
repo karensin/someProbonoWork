@@ -1,25 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Card from 'react-bootstrap/Card'
-interface product {
-    productImg: string;
-    description: string;
-    title: string;
-    price: string;
-}
-const Product = (props: product) => {
-    const { productImg, description, price, title } = props
-    return (
-        <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-                <Card.Title>{title}</Card.Title>
-                <Card.Text>
-                    {description}
-                </Card.Text>
+import { Row } from 'react-bootstrap';
+import styles from '../../styles/Home.module.css'
+import ProductModal from './ProductModal';
 
-            </Card.Body>
-        </Card>
+export interface ProductProps {
+    productIm?: string;
+    description?: string;
+    title?: string;
+    price?: string;
+    prodSpecs?: string;
+}
+interface cardProps {
+    productProps: ProductProps
+}
+const Product = (props: cardProps) => {
+    const [toggleModal, setToggleModal] = useState(false)
+    const { description, price, title, prodSpecs, productIm } = props.productProps
+    const formatProdSpecs = prodSpecs?.split('/')
+
+    const isOpenModal = () => {
+        setToggleModal(!toggleModal)
+    }
+
+    return (
+        <>
+            <ProductModal modalProps={props.productProps} toggleModalFunc={isOpenModal} toggleModalState={toggleModal} />
+            <Card onClick={isOpenModal}>
+                <div className={styles.productImage}>
+                    <Card.Img variant="top" src={productIm} />
+                </div>
+                <Card.Body>
+                    <Card.Text>
+                        <Card.Title>{title}</Card.Title>
+                        <Card.Text> {price}</Card.Text>
+                        {/* <Card.Text>
+                        {description}
+                    </Card.Text> */}
+                        {/* <Card.Text>
+                        {formatProdSpecs && formatProdSpecs?.map((spec) => {
+                            return <Row>{spec} </Row>
+                        })}
+                    </Card.Text> */}
+                    </Card.Text>
+                </Card.Body>
+            </Card>
+        </>
     )
 }
 

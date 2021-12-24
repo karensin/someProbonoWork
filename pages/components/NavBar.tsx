@@ -15,8 +15,6 @@ const NavBarComponent = () => {
                     navbarScroll
                 >
                     <Nav.Link href="#action1">WATCH</Nav.Link>
-                    <Nav.Link href="#action2">STRAPS</Nav.Link>
-                    <Nav.Link href="#action3">WALK MY WATCH</Nav.Link>
                     <Nav.Link href="#action4">SELL YOUR WATCH</Nav.Link>
                     <Nav.Link href="#action5">
                         ABOUT US
