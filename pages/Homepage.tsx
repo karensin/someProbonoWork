@@ -4,9 +4,30 @@ import { Container, Row, Col, Image } from 'react-bootstrap';
 import styles from '../styles/Home.module.css'
 import coverphoto from './public/cover.png';
 import Product, { ProductProps } from './components/Product';
+import Footer from './components/Footer';
 
 declare module "*.png";
-const productsMock = [
+export const productCarouselMock = [
+    {
+        imageSrc: './prodImages/116000wh_A.png',
+        description: 'We rarely find 5513 Lollipops so when when once comes around we truly feel lucky. This is one is a MK3 variant, nicknamed the lollipop due to the lume plots and hashmarks looking like lollipops. This case has recently been polished but remains very very thick and sharp.',
+
+    },
+    {
+        imageSrc: './prodImages/16528blk_os_A.png',
+        description: 'We rarely find 5513 Lollipops so when when once comes around we truly feel lucky. This is one is a MK3 variant, nicknamed the lollipop due to the lume plots and hashmarks looking like lollipops. This case has recently been polished but remains very very thick and sharp.',
+    },
+    {
+        imageSrc: './prodImages/16018ferrite_A.png',
+        description: 'We rarely find 5513 Lollipops so when when once comes around we truly feel lucky. This is one is a MK3 variant, nicknamed the lollipop due to the lume plots and hashmarks looking like lollipops. This case has recently been polished but remains very very thick and sharp.',
+    },
+    {
+        imageSrc: './prodImages/116000wh_A.png',
+        description: 'We rarely find 5513 Lollipops so when when once comes around we truly feel lucky. This is one is a MK3 variant, nicknamed the lollipop due to the lume plots and hashmarks looking like lollipops. This case has recently been polished but remains very very thick and sharp.',
+    },
+
+]
+export const productsMock = [
     {
         productIm: './prodImages/116000wh_A.png',
         title: '2020 Rolex Oyster Perpetual White 116000',
@@ -57,7 +78,7 @@ const Homepage = () => {
             <div className={styles.homepage}>
                 <div className="m-0 p-0">
                     <Row className="m-0 w-100 h-50">
-                        <Col className={styles.landingLeft} md={6}>
+                        <Col className={styles.landingLeft} >
                             <Row className="pb-3">  <h1> ENO WATCH CO. </h1></Row>
                             <Row className="pb-3">
                                 <div className={styles.landingText}>
@@ -71,13 +92,18 @@ const Homepage = () => {
                     </Row>
                 </div>
             </div>
+
             <div className={styles.productSection}>
                 <Row className="m-0">
                     {productsMock.map((product: ProductProps) => {
                         return <Col md={4}> <Product productProps={product} /> </Col>
                     })}
                 </Row>
+
             </div>
+
+            <Footer />
+
         </>
     )
 }

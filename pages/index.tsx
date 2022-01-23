@@ -4,6 +4,8 @@ import { Button } from 'react-bootstrap';
 import { NextPage } from 'next'
 import NavBarComponent from './components/NavBar'
 import Homepage from './Homepage';
+import TermsConditions from './TermsConditions';
+
 
 const Home: NextPage = () => {
   return (

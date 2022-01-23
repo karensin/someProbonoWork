@@ -1,11 +1,20 @@
 .container {
-  padding: 0  ;
+  padding: 0 ;
+ 
 }
 .productSection{
  padding-top:30px ; 
  background-color:  #E5E5E5;
 }
+.homepageContainer{
+  display: flex;
+  flex-direction: column;
+ justify-content: center;
+ padding: 0;
+  background-color:rgb(110, 107, 103);
 
+ 
+}
 .main {
   /* min-height: 100vh; */
   /* flex: 1;
@@ -20,18 +29,21 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .landingLeft{
   align-self: end;
+  position: static;
 }
 .homepage{
   flex: 1;
-  display: flex;
+  /* display: flex; */
   width: 100%;
   max-height:80vh;
-  background-color:#5F574D;
   padding:0; 
-  
+    background-color:rgb(110, 107, 103);
+
  }
  .coverImg{
-   width: 100%
+   max-width: 600px;
+   
+   
  }
 .footer {
   display: flex;
@@ -140,4 +152,14 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   max-height: 330px;
   overflow: hidden;
 
+}
+.footer{
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  background-color:#5F574D ;
+}
+.carouselImg{
+ width: 500px;
+ height: 500px;
 }

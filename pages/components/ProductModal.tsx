@@ -1,6 +1,8 @@
 import React from 'react'
 import { Modal, Button } from 'react-bootstrap'
 import { ProductProps } from './Product'
+import ProductCarousel from './Carousel'
+import { productCarouselMock } from '../Homepage'
 
 
 interface ProductModalProps {
@@ -26,10 +28,12 @@ const ProductModal = (props: ProductModalProps) => {
             onHide={toggleModalFunc}
             backdrop="static"
             keyboard={false}
+            closeButton
         >
-            <Modal.Header closeButton>
-                <Modal.Title> {title}</Modal.Title>
+            <Modal.Header >
+                <ProductCarousel carouselProps={productCarouselMock} />
             </Modal.Header>
+            <Modal.Title> {title}</Modal.Title>
             <Modal.Body>
                 {price}
             </Modal.Body>
