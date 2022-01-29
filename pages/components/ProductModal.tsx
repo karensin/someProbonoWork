@@ -2,7 +2,7 @@ import React from 'react'
 import { Modal, Button } from 'react-bootstrap'
 import { ProductProps } from './Product'
 import ProductCarousel from './Carousel'
-import { productCarouselMock } from '../Homepage'
+import { productsMock } from '../Homepage'
 
 
 interface ProductModalProps {
@@ -10,10 +10,11 @@ interface ProductModalProps {
     toggleModalFunc: () => void;
     toggleModalState?: boolean;
     modalProps?: any;
+
 }
 const ProductModal = (props: ProductModalProps) => {
     const { toggleModalFunc } = props
-    const { description, price, title, prodSpecs, productIm } = props.modalProps
+    const { description, price, title, prodSpecs, productIm, carouselImgList } = props.modalProps
     const formatProdSpecs = prodSpecs?.split('/')
 
     return (
@@ -31,16 +32,20 @@ const ProductModal = (props: ProductModalProps) => {
             closeButton
         >
             <Modal.Header >
-                <ProductCarousel carouselProps={productCarouselMock} />
+                <ProductCarousel carouselProps={carouselImgList} />
             </Modal.Header>
-            <Modal.Title> {title}</Modal.Title>
+            <Modal.Title className="p-3"> {title}</Modal.Title>
             <Modal.Body>
-                {price}
+                <strong> {price}</strong>
+                <ul className="p-0">{formatProdSpecs.map((spec: string) => {
+                    return (
+                        <ol className="p-0"> {spec}</ol>
+                    )
+                })}</ul>
             </Modal.Body>
-            <p>{description}</p>
+
             <Modal.Footer>
                 <Button onClick={toggleModalFunc} variant="secondary">Close</Button>
-                <Button variant="primary">Save changes</Button>
             </Modal.Footer>
         </Modal>
     )

@@ -31,9 +31,8 @@ export const Footer = () => {
             </Row>
             <Row className="m-0 w-100">
                 <Col md={12}>
-                    PURCHASE WITH CONFIDENCE
-     © 2021 - 2022 E & O Watches.All rights reserved.
-
+                    <ol> PURCHASE WITH CONFIDENCE </ol>
+                    <ol> © 2021-2022 E&O Watch. ALL RIGHTS RESERVED.</ol>
                 </Col>
             </Row>
         </footer>

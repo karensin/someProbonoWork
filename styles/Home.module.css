@@ -41,9 +41,12 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
  }
  .coverImg{
-   max-width: 600px;
-   
-   
+    max-width: 500px;
+    max-height: 500px;
+ }
+ img.card-img-top{
+   max-width: 500px;
+    max-height: 500px;
  }
 .footer {
   display: flex;
@@ -160,6 +163,6 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   background-color:#5F574D ;
 }
 .carouselImg{
- width: 500px;
- height: 500px;
+    width: 750px;
+    height: 537px;
 }

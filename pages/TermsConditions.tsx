@@ -53,7 +53,7 @@ export const TermsConditions = () => {
                               </ol>
                 </ul>
             </main>
-            <span> © 1999-2021 JOMASHOP. ALL RIGHTS RESERVED.</span>
+            <ol> © 2021-2022 E&O Watch. ALL RIGHTS RESERVED.</ol>
         </div>
 
 
