@@ -5,7 +5,7 @@ const fetch = require("node-fetch");
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            to: "sanchitcop19@gmail.com",
+            to: "kkwsin@gmail.com",
             subject: "Test",
             body: "body",
         }),

@@ -2,8 +2,11 @@ const util = require("util");
 const readline = require("readline");
 const { google } = require("googleapis");
 const { SecretManagerServiceClient } = require("@google-cloud/secret-manager");
+const { GCP_KEY_PATH } = require("./constants");
+
 const secretsClient = new SecretManagerServiceClient({
     projectId: "karen-sell-watches",
+    keyFilename: GCP_KEY_PATH,
 });
 
 const SCOPES = ["https://www.googleapis.com/auth/gmail.send"];
