@@ -27,18 +27,22 @@ export const ContactUs = () => {
 
     return (
         <body>
-            <h1> Contact us</h1>
-            <form id="myform" onSubmit={sendEmail}>
-                <div>
-                    <input type="text" className="form-control" placeholder="Name" name="name" />
-                </div>
-                <div>
-                    <textarea className="form-control" placeholder="message" name="message" ></textarea>
-                </div>
-                <Button onClick={(e) => sendEmail(e)} variant="primary" type="submit">
-                    Submit
+            <Container style={{ padding: '3rem' }}>
+                <h1> Contact us</h1>
+                <form id="myform" onSubmit={sendEmail}>
+                    <div className="p-2">
+                        <input type="text" className="form-control" placeholder="Name" name="name" />
+                    </div>
+                    <div className="p-2">
+                        <textarea className="form-control" placeholder="message" name="message" ></textarea>
+                    </div>
+                    <div className="p-2 center">
+                        <Button onClick={(e) => sendEmail(e)} type="submit">
+                            Submit
             </Button>
-            </form>
+                    </div>
+                </form>
+            </Container>
         </body>
     )
 }

@@ -33,7 +33,7 @@ const Product = (props: cardProps) => {
                 </div>
                 <Card.Body>
                     <Card.Text>
-                        <Card.Title>{title}</Card.Title>
+                        <Card.Title style={{ fontSize: '17px' }}>{title}</Card.Title>
                         <Card.Text> {price}</Card.Text>
                         {/* <Card.Text>
                         {description}
