@@ -27,13 +27,13 @@ const Product = (props: cardProps) => {
     return (
         <>
             <ProductModal modalProps={props.productProps} toggleModalFunc={isOpenModal} toggleModalState={toggleModal} />
-            <Card style={{ width: '30rem' }} onClick={isOpenModal}>
+            <Card style={{ width: '100%' }} onClick={isOpenModal}>
                 <div className={styles.productImage}>
                     <Card.Img variant="top" src={productIm} />
                 </div>
                 <Card.Body>
                     <Card.Text>
-                        <Card.Title>{title}</Card.Title>
+                        <Card.Title style={{ fontSize: '17px' }}>{title}</Card.Title>
                         <Card.Text> {price}</Card.Text>
                         {/* <Card.Text>
                         {description}
