@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, Button } from 'react-bootstrap'
+import { Modal, Button, Row, Col } from 'react-bootstrap'
 import { ProductProps } from './Product'
 import ProductCarousel from './Carousel'
 import { productsMock } from '../Homepage'
@@ -19,11 +19,12 @@ const ProductModal = (props: ProductModalProps) => {
 
     return (
         <Modal
-            size="lg"
-            dialogClassName="modal-90w"
+            size='xl'
+            // dialogClassName="modal-100w"
             // fullscreen="xl-down"
             // aria-labelledby="example-custom-modal-styling-title"
             // aria-labelledby="contained-modal-title-vcenter"
+            animation
             centered
             show={props.toggleModalState}
             onHide={toggleModalFunc}
@@ -31,19 +32,24 @@ const ProductModal = (props: ProductModalProps) => {
             keyboard={false}
             closeButton
         >
-            <Modal.Header >
-                <ProductCarousel carouselProps={carouselImgList} />
-            </Modal.Header>
-            <Modal.Title className="p-3"> {title}</Modal.Title>
-            <Modal.Body>
-                <strong> {price}</strong>
-                <ul className="p-0">{formatProdSpecs.map((spec: string) => {
-                    return (
-                        <ol className="p-0"> {spec}</ol>
-                    )
-                })}</ul>
-            </Modal.Body>
-
+            <Row className="w-100 m-0">
+                {/* <Modal.Header > */}
+                <Col md={8}>
+                    <ProductCarousel carouselProps={carouselImgList} />
+                </Col>
+                {/* </Modal.Header> */}
+                <Col md={4}>
+                    <Modal.Title className="p-3"> {title}</Modal.Title>
+                    <Modal.Body>
+                        <strong> {price}</strong>
+                        <ul className="p-0">{formatProdSpecs.map((spec: string) => {
+                            return (
+                                <ol className="p-0"> {spec}</ol>
+                            )
+                        })}</ul>
+                    </Modal.Body>
+                </Col>
+            </Row>
             <Modal.Footer>
                 <Button onClick={toggleModalFunc} variant="secondary">Close</Button>
             </Modal.Footer>

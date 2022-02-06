@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Card from 'react-bootstrap/Card'
 import { Row, Container, Col, Button, Carousel } from 'react-bootstrap';
 import styles from '../../styles/Home.module.css'
 import ProductModal from './ProductModal';
 import { useRouter } from 'next/router';
+import * as React from 'react';
 
 interface carouselProps {
     productIm?: string;
@@ -12,6 +13,7 @@ interface carouselProps {
     price?: string;
     prodSpecs?: string
     carouselImgList?: string[];
+    product?: any
 }
 
 
@@ -37,15 +39,13 @@ const ProductCarousel = (props: carouselProps[]) => {
         return router.push('/TermsConditions')
     }
     return (
-        <Carousel controls fade activeIndex={index} onSelect={handleSelect}>
-            {carouselProps.map((product: carouselProps) => {
-
+        <Carousel className="d-flex" controls fade activeIndex={index} onSelect={handleSelect}>
+            {carouselProps.map((product: any) => {
                 return (
-                    <Carousel.Item>
-                        <img
-                            className={styles.carouselImg}
-                            src={product}
-                        />
+                    <Carousel.Item className="d-flex" >
+                        <Card className="d-flex"  >
+                            <Card.Img src={product} />
+                        </Card>
                     </Carousel.Item>
                 )
             })}
