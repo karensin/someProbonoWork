@@ -65,7 +65,7 @@ const Homepage = () => {
         <>
             <div className={styles.homepage}>
                 <div className="m-0 p-0">
-                    <Row className="m-0 w-100 justify-content-center">
+                    <Row className="m-0 p-4 w-100 justify-content-center">
                         <Col md={7} className={styles.landingLeft} >
                             <h1> ENO WATCH CO. </h1>
                             {/* <Row className="pb-3"> */}
