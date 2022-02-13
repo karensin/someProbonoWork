@@ -35,7 +35,7 @@ export const ContactUs = () => {
 
             <Container style={{ padding: '3rem' }}>
                 <h1 className="p-1"> Contact us</h1>
-                <div className="p-2"> We love questions and feedback aand we are always happy to help! Send us a message and we will respond within 24 hours!</div>
+                <div className="p-2"> We love questions and feedback and we are always happy to help! Send us a message and we will respond within 24 hours!</div>
                 <form id="myform" onSubmit={sendEmail}>
                     <div className="p-2">
                         <input type="text" className="form-control" placeholder="Name" name="name" />

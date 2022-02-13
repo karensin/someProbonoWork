@@ -15,10 +15,8 @@ const NavBarComponent = () => {
                     navbarScroll
                 >
                     <Nav.Link href="/">WATCH</Nav.Link>
-                    <Nav.Link href="#action4">SELL YOUR WATCH</Nav.Link>
-                    <Nav.Link href="#action5">
-                        ABOUT US
-          </Nav.Link>
+                    <Nav.Link href="/SellWatch">SELL YOUR WATCH</Nav.Link>
+
                     <Nav.Link href="/TermsConditions#">
                         TERMS & CONDITIONS
           </Nav.Link>
