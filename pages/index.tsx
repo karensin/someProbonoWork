@@ -11,7 +11,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Karen&apos; App</title>
+        <title>ENO Watches</title>
         <meta name="description" content="Your new app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

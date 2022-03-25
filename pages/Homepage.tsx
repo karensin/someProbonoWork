@@ -2,12 +2,12 @@ import React from 'react';
 import NavBarComponent from './components/NavBar';
 import { Container, Row, Col, Image, Button } from 'react-bootstrap';
 import styles from '../styles/Home.module.css'
-import coverphoto from './public/cover.png';
+import coverphoto from './public/cover.jpg';
 import Product, { ProductProps } from './components/Product';
 import Footer from './components/Footer';
 import { ContactUs } from './components/ContactUs';
 
-declare module "*.png";
+declare module "*.jpg";
 
 
 const carouselConfig = (imgString: string, startNum: number, endNum: number) => {
@@ -61,23 +61,21 @@ const Homepage = () => {
 
     return (
         <>
-            <div className={styles.homepage}>
-                <div className="m-0 p-0">
-                    <Row className="m-0 p-4 w-100 justify-content-center">
-                        <Col md={7} className={styles.landingLeft} >
-                            <h1> ENO WATCH CO. </h1>
-                            {/* <Row className="pb-3"> */}
-                            <div className={styles.landingText}>
-                                We rarely find 5513 Lollipops so when when once comes around we truly feel lucky. This is one is a MK3 variant, nicknamed the lollipop due to the lume plots and hashmarks looking like lollipops. This case has recently been polished but remains thick and sharp.
-                            </div>
-                            {/* </Row> */}
-                        </Col>
-                        <Col md={5} className="p-0 justify-content-center d-flex" >
-                            <Image fluid className={styles.coverImg} src='/cover.png' />
-                        </Col>
-                    </Row>
-                </div>
-            </div>
+            <Row className={styles.homepage}>
+                <Col md={6} className={styles.landingLeft} >
+                    <ol className="p-0">
+                        <ul > <h1> ENO WATCH CO. </h1> </ul>
+                        {/* <Row className="pb-3"> */}
+                        <ul className={styles.landingText}>
+                            We rarely find 5513 Lollipops so when when once comes around we truly feel lucky. This is one is a MK3 variant, nicknamed the lollipop due to the lume plots and hashmarks looking like lollipops. This case has recently been polished but remains thick and sharp.
+                            </ul>
+                    </ol>
+                    {/* </Row> */}
+                </Col>
+                <Col md={6} className="px-1" >
+                    <Image className={styles.coverImg} src='/cover.jpg' />
+                </Col>
+            </Row>
 
             <div className={styles.productSection}>
                 <Row className="m-0">
