@@ -20,9 +20,9 @@ export const SellWatch = () => {
     // const isOpenModal = () => {
     //     setToggleModal(!toggleModal)
     // }
-    const [emailSuccess, setEmailState] = useState()
-    const [emailAttempted, setAttemptState] = useState(false)
-    const sendEmail = (e) => {
+    const [emailSuccess, setEmailState] = useState<boolean | null>()
+    const [emailAttempted, setAttemptState] = useState<boolean | null>(false)
+    const sendEmail = (e: any) => {
         e.preventDefault()
         emailjs.sendForm('service_tum43zi', 'template_trccu8r', '#myform').then((reseult) => {
             console.log(reseult.text)

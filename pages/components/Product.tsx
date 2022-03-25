@@ -6,10 +6,10 @@ import styles from '../../styles/Home.module.css'
 import ProductModal from './ProductModal';
 
 export interface ProductProps {
-    productIm?: string;
+    productIm: string;
     description?: string;
-    title?: string;
-    price?: string;
+    title: string;
+    price: string;
     prodSpecs?: string;
 }
 interface cardProps {
@@ -17,8 +17,8 @@ interface cardProps {
 }
 const Product = (props: cardProps) => {
     const [toggleModal, setToggleModal] = useState(false)
-    const { description, price, title, prodSpecs, productIm } = props.productProps
-    const formatProdSpecs = prodSpecs?.split('/')
+    // const { price, title, prodSpecs, productIm } = props.productProps
+    // const formatProdSpecs = props.prodSpecs?.split('/')
 
     const isOpenModal = () => {
         setToggleModal(!toggleModal)
@@ -29,12 +29,12 @@ const Product = (props: cardProps) => {
             <ProductModal modalProps={props.productProps} toggleModalFunc={isOpenModal} toggleModalState={toggleModal} />
             <Card style={{ width: '100%' }} onClick={isOpenModal}>
                 <div className={styles.productImage}>
-                    <Card.Img variant="top" src={productIm} />
+                    <Card.Img variant="top" src={props.productProps?.productIm} />
                 </div>
                 <Card.Body>
                     <Card.Text>
-                        <Card.Title style={{ fontSize: '17px' }}>{title}</Card.Title>
-                        <Card.Text> {price}</Card.Text>
+                        <Card.Title style={{ fontSize: '17px' }}>{props.productProps?.title}</Card.Title>
+                        <Card.Text> {props.productProps?.price}</Card.Text>
                         {/* <Card.Text>
                         {description}
                     </Card.Text> */}

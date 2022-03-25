@@ -10,10 +10,10 @@ import { ContactUs } from './components/ContactUs';
 declare module "*.png";
 
 
-const carouselConfig = (imgString: string, startNum: string, endNum: string) => {
+const carouselConfig = (imgString: string, startNum: number, endNum: number) => {
     let imgList = []
 
-    for (let i = startNum; i < endNum; i++) {
+    for (let i: number = startNum; i < endNum; i++) {
         imgList.push(`./caroselImages/${imgString}(${i}).jpg`)
     }
     console.log(imgList)
@@ -82,8 +82,8 @@ const Homepage = () => {
 
             <div className={styles.productSection}>
                 <Row className="m-0">
-                    {productsMock.map((product: ProductProps) => {
-                        return <Col className="p-2 my-2" md={4}> <Product productProps={product} /> </Col>
+                    {productsMock && productsMock.map((product: ProductProps, i) => {
+                        return <Col className="p-2 my-2" md={4} key={i} > <Product productProps={product} /> </Col>
                     })}
                 </Row>
 

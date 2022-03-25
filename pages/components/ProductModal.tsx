@@ -17,14 +17,15 @@ interface ProductModalProps {
 }
 const ProductModal = (props: ProductModalProps) => {
     const { toggleModalFunc } = props
-    const { description, price, title, prodSpecs, productIm, carouselImgList } = props.modalProps
-    const formatProdSpecs = prodSpecs?.split('/')
-    const [emailSuccess, setEmailState] = useState()
-    const [emailAttempted, setAttemptState] = useState(false)
-    const [contactEmail, setContactEmail] = useState('')
-    const [message, setMessage] = useState('')
-    const [isInterested, setInterested] = useState(false)
-    const [toogleSpecs, setToggleSpecs] = useState(true)
+
+    // const { description, price, title, prodSpecs, productIm, carouselImgList } = props.modalProps
+    // const formatProdSpecs = prodSpecs?.split('/')
+    const [emailSuccess, setEmailState] = useState<boolean | null>()
+    const [emailAttempted, setAttemptState] = useState<boolean | null>(false)
+    const [contactEmail, setContactEmail] = useState<string | null>('')
+    const [message, setMessage] = useState<string | null>('')
+    const [isInterested, setInterested] = useState<boolean | null>(false)
+    const [toogleSpecs, setToggleSpecs] = useState<boolean | null>(true)
 
     const submitInquiry = (e) => {
         e.preventDefault()
@@ -57,17 +58,17 @@ const ProductModal = (props: ProductModalProps) => {
             <Row className="w-100 m-0">
                 <Modal.Header closeButton> </Modal.Header>
                 <Col md={8}>
-                    <ProductCarousel carouselProps={carouselImgList} />
+                    <ProductCarousel carouselProps={props.modalProps?.carouselImgList} />
                 </Col>
                 {/* </Modal.Header> */}
                 <Col md={4}>
-                    <Modal.Title className="p-0"> {title}</Modal.Title>
+                    <Modal.Title className="p-0"> {props.modalProps?.title}</Modal.Title>
                     <Modal.Body className="p-0">
 
-                        <Col> <strong> {price}</strong></Col>
-                        <ul className="p-0">{formatProdSpecs.map((spec: string) => {
+                        <Col> <strong> {props.modalProps?.price}</strong></Col>
+                        <ul className="p-0">{props.modalProps?.formatProdSpecs.map((spec: string, i) => {
                             return (
-                                <ol className="p-0"> {spec}</ol>
+                                <ol key={i} className="p-0"> {spec}</ol>
                             )
                         })}</ul>
 
@@ -78,7 +79,7 @@ const ProductModal = (props: ProductModalProps) => {
                         <form className="p-0" id="myform2" onSubmit={submitInquiry}>
                             <div className="p-0">
                                 interested? send us a message to inquire about this product
-                                    <input type="text" className="form-control" value={title} name="product" />
+                                    <input type="text" className="form-control" value={props.modalProps?.title} name="product" />
                             </div>
                             <div className="p-0">
                                 <input type="text" className="form-control" placeholder="name" name="name" />
@@ -102,7 +103,6 @@ const ProductModal = (props: ProductModalProps) => {
             </Row>
             <Modal.Footer>
                 <Button onClick={toggleModalFunc} variant="primary">Close</Button>
-
             </Modal.Footer>
         </Modal>
     )

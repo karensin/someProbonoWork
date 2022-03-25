@@ -7,7 +7,7 @@ import ProductModal from './ProductModal';
 import { useRouter } from 'next/router';
 import * as React from 'react';
 
-interface carouselProps {
+interface CarouselProps {
     productIm?: string;
     description?: string;
     price?: string;
@@ -17,17 +17,13 @@ interface carouselProps {
 }
 
 
-const ProductCarousel = (props: carouselProps[]) => {
+
+const ProductCarousel = (props: any) => {
     const [index, setIndex] = useState(0);
-
     const router = useRouter()
-    console.log(props, 'hello')
-    const { carouselProps } = props
-
     const handleSelect = (selectedIndex: React.SetStateAction<number>, e: any) => {
         setIndex(selectedIndex);
     };
-    console.log(carouselProps, 'carouselProps')
     // const [toggleModal, setToggleModal] = useState(false)
     // const { description, price, title, prodSpecs, productIm } = props.productProps
     // const formatProdSpecs = prodSpecs?.split('/')
@@ -40,9 +36,9 @@ const ProductCarousel = (props: carouselProps[]) => {
     }
     return (
         <Carousel className="d-flex" controls fade activeIndex={index} onSelect={handleSelect}>
-            {carouselProps.map((product: any) => {
+            {props.carouselProps && props.carouselProps.map((product: any, i) => {
                 return (
-                    <Carousel.Item className="d-flex" >
+                    <Carousel.Item key={i} className="d-flex" >
                         <Card className="d-flex"  >
                             <Card.Img src={product} />
                         </Card>

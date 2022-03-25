@@ -12,9 +12,10 @@ init("user_K6YifXypBYrbFpHNjnwbJ");
 export const ContactUs = () => {
 
 
-    const [emailSuccess, setEmailState] = useState()
-    const [emailAttempted, setAttemptState] = useState(false)
-    const sendEmail = (e) => {
+    const [emailState, setEmailState] = useState<boolean | null>(null)
+
+    const [emailAttempt, setAttemptState] = useState<boolean | null>(false)
+    const sendEmail = (e: any) => {
         e.preventDefault()
         emailjs.sendForm('service_tum43zi', 'template_trccu8r', '#myform').then((reseult) => {
             console.log(reseult.text)
@@ -54,10 +55,10 @@ export const ContactUs = () => {
                     </div>
                 </form>
 
-                {emailSuccess && emailAttempted && <h5 className="p-3">
+                {emailState && emailAttempt && <h5 className="p-3">
                     Success! We have recieved your message and will respond as soon as possible
             </h5>
-                }{emailAttempted && !emailSuccess &&
+                }{emailAttempt && !emailState &&
                     <div className="p-3">
                         sorry we are unable to recieve your message at this time. Please reach us at
                 </div>}
