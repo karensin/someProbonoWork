@@ -7,10 +7,9 @@ import ProductModal from './ProductModal';
 
 export interface ProductProps {
     productIm: string;
-    description?: string;
     title: string;
     price: string;
-    prodSpecs?: string;
+    prodSpecs: string
 }
 interface cardProps {
     productProps: ProductProps

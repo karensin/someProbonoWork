@@ -11,15 +11,12 @@ init("user_K6YifXypBYrbFpHNjnwbJ");
 interface ProductModalProps {
     // toggleModal: (modalState: boolean) => void;
     toggleModalFunc: () => void;
-    toggleModalState?: boolean;
-    modalProps?: any;
-
+    toggleModalState: boolean;
+    modalProps: any;
 }
 const ProductModal = (props: ProductModalProps) => {
     const { toggleModalFunc } = props
-
-    // const { description, price, title, prodSpecs, productIm, carouselImgList } = props.modalProps
-    // const formatProdSpecs = prodSpecs?.split('/')
+    // const formatProdSpecs = props.modalProps.prodSpecs.split('/')
     const [emailSuccess, setEmailState] = useState<boolean | null>()
     const [emailAttempted, setAttemptState] = useState<boolean | null>(false)
     const [contactEmail, setContactEmail] = useState<string | null>('')
@@ -66,11 +63,11 @@ const ProductModal = (props: ProductModalProps) => {
                     <Modal.Body className="p-0">
 
                         <Col> <strong> {props.modalProps?.price}</strong></Col>
-                        <ul className="p-0">{props.modalProps?.formatProdSpecs.map((spec: string, i) => {
+                        {/* <ul className="p-0">{formatProdSpecs.map((spec: string, i) => {
                             return (
                                 <ol key={i} className="p-0"> {spec}</ol>
                             )
-                        })}</ul>
+                        })}</ul> */}
 
                         {/* <Col>
                             <Button onClick={() => setInterested(!isInterested)}> Inquiry </Button>

@@ -16,7 +16,6 @@ const carouselConfig = (imgString: string, startNum: number, endNum: number) => 
     for (let i: number = startNum; i < endNum; i++) {
         imgList.push(`./caroselImages/${imgString}(${i}).jpg`)
     }
-    console.log(imgList)
     return imgList
 }
 export const productsMock = [
