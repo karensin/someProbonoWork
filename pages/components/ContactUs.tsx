@@ -10,6 +10,8 @@ import { init } from '@emailjs/browser';
 init("user_K6YifXypBYrbFpHNjnwbJ");
 
 export const ContactUs = () => {
+
+
     const [emailSuccess, setEmailState] = useState()
     const [emailAttempted, setAttemptState] = useState(false)
     const sendEmail = (e) => {
@@ -25,9 +27,6 @@ export const ContactUs = () => {
         })
     }
     const router = useRouter()
-    // const [toggleModal, setToggleModal] = useState(false)
-    // const { description, price, title, prodSpecs, productIm } = props.productProps
-    // const formatProdSpecs = prodSpecs?.split('/')
 
     return (
         <body>
