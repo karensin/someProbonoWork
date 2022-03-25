@@ -16,7 +16,8 @@ interface ProductModalProps {
 }
 const ProductModal = (props: ProductModalProps) => {
     const { toggleModalFunc } = props
-    // const formatProdSpecs = props.modalProps.prodSpecs.split('/')
+    const formatProdSpecs = props.modalProps.prodSpecs.split('/')
+    console.log(formatProdSpecs, 'hi')
     const [emailSuccess, setEmailState] = useState<boolean | null>()
     const [emailAttempted, setAttemptState] = useState<boolean | null>(false)
     const [contactEmail, setContactEmail] = useState<string | null>('')
@@ -40,10 +41,6 @@ const ProductModal = (props: ProductModalProps) => {
         <Modal
             size='xl'
             fullscreen
-            // dialogClassName="modal-100w"
-            // fullscreen="xl-down"
-            // aria-labelledby="example-custom-modal-styling-title"
-            // aria-labelledby="contained-modal-title-vcenter"
             animation
             centered
             show={props.toggleModalState}
@@ -57,22 +54,16 @@ const ProductModal = (props: ProductModalProps) => {
                 <Col md={8}>
                     <ProductCarousel carouselProps={props.modalProps?.carouselImgList} />
                 </Col>
-                {/* </Modal.Header> */}
                 <Col md={4}>
                     <Modal.Title className="p-0"> {props.modalProps?.title}</Modal.Title>
                     <Modal.Body className="p-0">
 
                         <Col> <strong> {props.modalProps?.price}</strong></Col>
-                        {/* <ul className="p-0">{formatProdSpecs.map((spec: string, i) => {
+                        <ul className="p-0">{formatProdSpecs.map((spec: string, i) => {
                             return (
                                 <ol key={i} className="p-0"> {spec}</ol>
                             )
-                        })}</ul> */}
-
-                        {/* <Col>
-                            <Button onClick={() => setInterested(!isInterested)}> Inquiry </Button>
-                        </Col> */}
-                        {/* {isInterested && */}
+                        })}</ul>
                         <form className="p-0" id="myform2" onSubmit={submitInquiry}>
                             <div className="p-0">
                                 interested? send us a message to inquire about this product
@@ -93,8 +84,6 @@ const ProductModal = (props: ProductModalProps) => {
                                   </Button>
                             </div>
                         </form>
-                        {/* } */}
-
                     </Modal.Body>
                 </Col>
             </Row>
