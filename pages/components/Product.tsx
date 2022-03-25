@@ -9,7 +9,8 @@ export interface ProductProps {
     productIm: string;
     title: string;
     price: string;
-    prodSpecs: string
+    prodSpecs: string;
+    carouselImgList: string[];
 }
 interface cardProps {
     productProps: ProductProps
@@ -25,7 +26,7 @@ const Product = (props: cardProps) => {
 
     return (
         <>
-            <ProductModal modalProps={props.productProps} toggleModalFunc={isOpenModal} toggleModalState={toggleModal} />
+            <ProductModal test={props.productProps?.prodSpecs} modalProps={props.productProps} toggleModalFunc={isOpenModal} toggleModalState={toggleModal} />
             <Card style={{ width: '100%' }} onClick={isOpenModal}>
                 <div className={styles.productImage}>
                     <Card.Img variant="top" src={props.productProps?.productIm} />

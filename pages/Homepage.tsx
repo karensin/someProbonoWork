@@ -55,7 +55,6 @@ export const productsMock = [
         prodSpecs: 'CASE: Very thick  and sharp case that shows light wear from use. Excellent black bezel insert also in good condition and show light wear from use. / DIAL: Very good WG surround dial and matching hands. The glossy surface of the  dial is ageing to matte and has some spotting from age BRACELET: Excellent 93150 bracelet with 10 links showing very light stretch for its age. / SERIAL: R9 /ACCESSORIES: NONE / NOTE: A good entry level for Rolex Sub,  come with a plexiglass dome crystal as a vintage, with R serial the last batch of 5513.',
         carouselImgList: carouselConfig('1998 vintage rolex submariner 5513', 1, 7)
     },
-
 ]
 const Homepage = () => {
 
@@ -65,12 +64,10 @@ const Homepage = () => {
                 <Col md={6} className={styles.landingLeft} >
                     <ol className="p-0">
                         <ul > <h1> ENO WATCH CO. </h1> </ul>
-                        {/* <Row className="pb-3"> */}
                         <ul className={styles.landingText}>
                             We rarely find 5513 Lollipops so when when once comes around we truly feel lucky. This is one is a MK3 variant, nicknamed the lollipop due to the lume plots and hashmarks looking like lollipops. This case has recently been polished but remains thick and sharp.
                             </ul>
                     </ol>
-                    {/* </Row> */}
                 </Col>
                 <Col md={6} className="px-1" >
                     <Image className={styles.coverImg} src='/cover.jpg' />
