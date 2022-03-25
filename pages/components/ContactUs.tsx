@@ -12,7 +12,7 @@ init("user_K6YifXypBYrbFpHNjnwbJ");
 export const ContactUs = () => {
 
 
-    const [emailState, setEmailState] = useState<boolean | null>(null)
+    const [emailState, setEmailState] = useState<boolean | null>(true)
 
     const [emailAttempt, setAttemptState] = useState<boolean | null>(false)
     const sendEmail = (e: any) => {
@@ -27,7 +27,6 @@ export const ContactUs = () => {
             setAttemptState(true)
         })
     }
-    const router = useRouter()
 
     return (
         <body>
@@ -35,7 +34,12 @@ export const ContactUs = () => {
 
             <Container style={{ padding: '3rem' }}>
                 <h1 className="p-1"> Contact us</h1>
-                <div className="p-2"> We love questions and feedback and we are always happy to help! Send us a message and we will respond within 24 hours!</div>
+                <div className="p-2"> We love questions and feedback! We are always happy to help! Send us a message and we will respond within 24 hours!</div>
+                {emailState && emailAttempt &&
+                    <h5 className="p-3">
+                        We got your message! We have recieved your message and will respond as soon as possible
+                    </h5>
+                }
                 <form id="myform" onSubmit={sendEmail}>
                     <div className="p-2">
                         <input type="text" className="form-control" placeholder="Name" name="name" />
@@ -54,14 +58,10 @@ export const ContactUs = () => {
 
                     </div>
                 </form>
-
-                {emailState && emailAttempt && <h5 className="p-3">
-                    Success! We have recieved your message and will respond as soon as possible
-            </h5>
-                }{emailAttempt && !emailState &&
+                {emailAttempt && !emailState &&
                     <div className="p-3">
-                        sorry we are unable to recieve your message at this time. Please reach us at
-                </div>}
+                        sorry we are unable to recieve your message at this time. Please reach us at  <a href="mailto:  oscar@enowatches.com"> oscar@enowatches.com</a>
+                    </div>}
             </Container>
 
 

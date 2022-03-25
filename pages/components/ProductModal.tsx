@@ -25,8 +25,8 @@ interface ProductModalProps {
 const ProductModal = (props: ProductModalProps) => {
     const { toggleModalFunc, test } = props
     const formatProdSpecs = test ? test.split('/') : []
-    const [emailSuccess, setEmailState] = useState<boolean | null>()
-    const [emailAttempted, setAttemptState] = useState<boolean | null>(false)
+    const [emailState, setEmailState] = useState<boolean | null>()
+    const [emailAttempt, setAttemptState] = useState<boolean | null>(false)
     const [contactEmail, setContactEmail] = useState<string | null>('')
     const [message, setMessage] = useState<string | null>('')
     const [isInterested, setInterested] = useState<boolean | null>(false)
@@ -60,11 +60,20 @@ const ProductModal = (props: ProductModalProps) => {
                 <Modal.Header closeButton> </Modal.Header>
                 <Col md={8}>
                     <ProductCarousel carouselProps={props.modalProps?.carouselImgList} />
+                    {emailState && emailAttempt &&
+                        <h5 className="p-3">
+                            We got your message! We have recieved your message and will respond as soon as possible
+                    </h5>
+                    }
+                    {emailAttempt && !emailState &&
+                        <div className="p-3">
+                            sorry we are unable to recieve your message at this time. Please reach us at
+                            <a href="mailto:  oscar@enowatches.com"> oscar@enowatches.com</a>
+                        </div>}
                 </Col>
                 <Col md={4}>
                     <Modal.Title className="p-0"> {props.modalProps?.title}</Modal.Title>
                     <Modal.Body className="p-0">
-
                         <Col> <strong> {props.modalProps?.price}</strong></Col>
                         <ul className="p-0">{formatProdSpecs && formatProdSpecs.map((spec: string, i) => {
                             return (
@@ -73,7 +82,7 @@ const ProductModal = (props: ProductModalProps) => {
                         })}</ul>
                         <form className="p-0" id="myform2" onSubmit={submitInquiry}>
                             <div className="p-0">
-                                interested? send us a message to inquire about this product
+                                Got question? Make an inqury now!
                                     <input type="text" className="form-control" value={props.modalProps?.title} name="product" />
                             </div>
                             <div className="p-0">
