@@ -10,7 +10,7 @@ import { ContactUs } from './components/ContactUs';
 declare module "*.png";
 
 
-const carouselConfig = (imgString, startNum, endNum) => {
+const carouselConfig = (imgString: string, startNum: string, endNum: string) => {
     let imgList = []
 
     for (let i = startNum; i < endNum; i++) {
@@ -26,7 +26,6 @@ export const productsMock = [
         price: 'USD $15,500',
         prodSpecs: "CASE: The previously polished case is excellent and shows light wear from use.  Excellent faded blue and  red  “Pepsi” bezel. / DIAL: Excellent glossy black tritium dial with matching hands and white- gold - surround markers / BRACELET: Excellent 78790 Oyster bracelet with 10 links showing only very light stretch for its age.The clasp is stamped with a matching 1996 date code. SERIAL: T5XX, XXX Accessories: Box, papers and green tag. / NOTE: A classic GMT with a aluminum Pepsi insert.",
         carouselImgList: carouselConfig('1996 Rolex GMT-Master II 16710 pepsi', 1, 16)
-
     },
     {
         productIm: './prodImages/Tudor-Black Bay79220R.jpeg',
