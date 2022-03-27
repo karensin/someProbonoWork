@@ -35,14 +35,6 @@ const Product = (props: cardProps) => {
                     <Card.Text>
                         <Card.Title style={{ fontSize: '17px' }}>{props.productProps?.title}</Card.Title>
                         <Card.Text> {props.productProps?.price}</Card.Text>
-                        {/* <Card.Text>
-                        {description}
-                    </Card.Text> */}
-                        {/* <Card.Text>
-                        {formatProdSpecs && formatProdSpecs?.map((spec) => {
-                            return <Row>{spec} </Row>
-                        })}
-                    </Card.Text> */}
                     </Card.Text>
                 </Card.Body>
             </Card>

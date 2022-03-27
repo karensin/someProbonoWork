@@ -26,20 +26,6 @@ const ProductModal = (props: ProductModalProps) => {
     const formatProdSpecs = test ? test.split('/') : []
     const [emailState, setEmailState] = useState<boolean | null>()
     const [emailAttempt, setAttemptState] = useState<boolean | null>(false)
-    const [contactEmail, setContactEmail] = useState<string | null>('')
-    const [message, setMessage] = useState<string | null>('')
-    const [isInterested, setInterested] = useState<boolean | null>(false)
-    const [toogleSpecs, setToggleSpecs] = useState<boolean | null>(true)
-    console.log(formatProdSpecs, 'let me out')
-    const SpecParser = {
-        CASE: '',
-        DIAL: '',
-        BRACELET: '',
-        SERIAL: '',
-        Accessories: '',
-        InventoryNo: '',
-        NOTE: ''
-    }
     const submitInquiry = (e) => {
         e.preventDefault()
         emailjs.sendForm('service_tum43zi', 'template_qt83wij', '#myform2').then((reseult) => {
@@ -55,7 +41,6 @@ const ProductModal = (props: ProductModalProps) => {
     return (
         <Modal
             size='xl'
-            fullscreen
             animation
             centered
             show={props.toggleModalState}

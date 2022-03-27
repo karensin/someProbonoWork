@@ -73,7 +73,7 @@ const Homepage = () => {
                     <Image className={styles.coverImg} src='/cover.svg' />
                 </Col>
             </Row>
-
+            {/* <input /> */}
             <div className={styles.productSection}>
                 <Row className="m-0">
                     {productsMock && productsMock.map((product: ProductProps, i) => {
