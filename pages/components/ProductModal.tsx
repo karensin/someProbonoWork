@@ -51,7 +51,7 @@ const ProductModal = (props: ProductModalProps) => {
         >
             <Row className="w-100 m-0">
                 <Modal.Header closeButton> </Modal.Header>
-                <Col md={8}>
+                <Col xs={12} md={8} lg={6}>
                     <ProductCarousel carouselProps={props.modalProps?.carouselImgList} />
                     {emailState && emailAttempt &&
                         <h5 className="p-3">
@@ -64,7 +64,7 @@ const ProductModal = (props: ProductModalProps) => {
                             <a href="mailto:  oscar@enowatches.com"> oscar@enowatches.com</a>
                         </div>}
                 </Col>
-                <Col md={4}>
+                <Col xs={12} md={5} lg={5}>
                     <Modal.Title className="p-0"> {props.modalProps?.title}</Modal.Title>
                     <Modal.Body className="p-0">
                         <Col> <strong> {props.modalProps?.price}</strong></Col>

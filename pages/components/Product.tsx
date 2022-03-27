@@ -13,6 +13,7 @@ export interface ProductProps {
     carouselImgList: string[];
 }
 interface cardProps {
+    index?: string;
     productProps: ProductProps
 }
 const Product = (props: cardProps) => {
@@ -27,12 +28,19 @@ const Product = (props: cardProps) => {
     return (
         <>
             <ProductModal test={props.productProps?.prodSpecs} modalProps={props.productProps} toggleModalFunc={isOpenModal} toggleModalState={toggleModal} />
-            <Card style={{ width: '100%' }} onClick={isOpenModal}>
+            <Card style={{ width: '100%', height: '100%' }} onClick={isOpenModal}>
                 <div className={styles.productImage}>
                     <Card.Img variant="top" src={props.productProps?.productIm} />
                 </div>
-                <Card.Body>
-                    <Card.Text>
+                <Card.Body style={{
+                    display: 'flex',
+                    justifyContent: 'space-around'
+                }}>
+                    <Card.Text style={{
+                        display: 'flex',
+                        justifyContent: 'space-around',
+                        flexDirection: 'column'
+                    }}>
                         <Card.Title style={{ fontSize: '17px' }}>{props.productProps?.title}</Card.Title>
                         <Card.Text> {props.productProps?.price}</Card.Text>
                     </Card.Text>

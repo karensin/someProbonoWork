@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NavBarComponent from './components/NavBar';
 import { Container, Row, Col, Image, Button } from 'react-bootstrap';
 import styles from '../styles/Home.module.css'
@@ -6,6 +6,7 @@ import coverphoto from './public/cover.jpg';
 import Product, { ProductProps } from './components/Product';
 import Footer from './components/Footer';
 import { ContactUs } from './components/ContactUs';
+import ProductModal from './components/ProductModal';
 
 declare module "*.jpg";
 
@@ -56,24 +57,50 @@ export const productsMock = [
     },
 ]
 const Homepage = () => {
+    const [toggleModal, setToggleModal] = useState(true)
+    const [searchval, setSearchVal] = useState('')
+    const [items, setItems] = useState([])
+    const [product, setProduct] = useState(null)
+    const isOpenModal = () => {
+        setToggleModal(!toggleModal)
+    }
+    const searchBar = (e: any) => {
+        e.preventDefault()
+        if (e.target.value) {
+            searchValConfig(e.target.value)
+        }
+    }
+    const searchValConfig = (e: any) => {
+        const foundItems = productsMock.filter((product) => product.title.toLocaleLowerCase().includes(e.target.value))
+        console.log(foundItems, 'did u find it')
+        setItems(foundItems)
+        return
+    }
 
     return (
         <>
+            {/* {product &&
+                <ProductModal test={product?.prodSpecs} modalProps={product} toggleModalFunc={isOpenModal} toggleModalState={toggleModal} />
+            } */}
             <Row className={styles.homepage}>
-                {/* <Col md={6} className={styles.landingLeft} >
-                    <ol className="p-0">
-                        <ul > <h1> ENO WATCH CO. </h1> </ul>
-                        <ul className={styles.landingText}>
-                            We rarely find 5513 Lollipops so when when once comes around we truly feel lucky. This is one is a MK3 variant, nicknamed the lollipop due to the lume plots and hashmarks looking like lollipops. This case has recently been polished but remains thick and sharp.
-                            </ul>
-                    </ol>
-                </Col> */}
                 <Col md={12} className="px-0" >
                     {/* <h1> ENO WATCH CO.   </h1> */}
                     <Image className={styles.coverImg} src='/cover.svg' />
                 </Col>
             </Row>
-            {/* <input /> */}
+            {/* <form id="search-bar" onSubmit={searchBar} >
+                <input name="search" onChange={(e) => searchValConfig(e)} type='text' />
+                <button value="submit" onClick={(e) => searchBar(e)}> Search</button>
+                {items && items.map((item, i) => {
+                    return (
+                        <ol> <Button variant="light" onClick={() => {
+                            setProduct(item)
+                            setSearchVal('')
+                        }}> {item.title}</Button> </ol>
+                    )
+                })}
+            </form> */}
+
             <div className={styles.productSection}>
                 <Row className="m-0">
                     {productsMock && productsMock.map((product: ProductProps, i) => {
