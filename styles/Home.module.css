@@ -45,63 +45,6 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   /* align-self: end;
   position: static; */
 }
-/* .homepage{
-  flex: 1;
-  display: flex;
-  width: 100%;
-  max-height:80vh;
-  min-height: 80vh;
-  padding:0; 
-    background-color:rgb(110, 107, 103);
- }
-  @media (max-width: 768px) { 
-     .homepage{
-       min-height: unset;
-     }  
-  }
- .coverImg{
-    max-width: 500px;
-    max-height: 500px;
-  
- }
-   
- @media (max-width: 575.98px) { 
-     .coverImg{
-     width: inherit;
-     }  
-  } 
- 
-   @media (max-width: 768px) { 
-     .coverImg{
-         width: 40vw;
-         max-height: 43vh;
-    }  
-  } 
-    @media (max-width: 500px) { 
-     .coverImg{
-     width: 100vw;
-    max-height: unset;
-    padding: 10px;
-    }  
-  } 
-  @media only screen and (width: 820px) and (height: 1180px) and (orientation:portrait) {
-   .coverImg{
-         width: 40vw;
-         max-height: 43vh;
-    }   
-}
-@media only screen and (width: 912px) and (height: 1368px) and (orientation:portrait) {
-   .coverImg{
-         width: 40vw;
-         max-height: 43vh;
-    }   
-}
- @media only screen and (width: 280px) and (height: 653px) and (orientation:portrait) {
-   .coverImg{
-       width: 98vw;
-       max-height: unset;
-    }   
-} */
  img.card-img-top{
    max-width: 500px;
     max-height: 500px;
@@ -223,4 +166,20 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 .carouselImg{
     width: 750px;
     height: 537px;
+}
+
+.CASE{
+  border-left: 3px solid red;
+}
+.DIAL{
+
+}
+.SERIAL{
+
+}
+.ACCESSORIES{
+
+}
+.NOTE{
+  
 }

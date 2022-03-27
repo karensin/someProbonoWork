@@ -23,16 +23,15 @@ export const productsMock = [
         productIm: './prodImages/Rolex-GMT-Master.jpeg',
         title: '1996 Rolex GMT-Master II 16710 “Pepsi” Bezel Box & Papers',
         price: 'USD $15,500',
-        prodSpecs: "CASE: The previously polished case is excellent and shows light wear from use.  Excellent faded blue and  red  “Pepsi” bezel. / DIAL: Excellent glossy black tritium dial with matching hands and white- gold - surround markers / BRACELET: Excellent 78790 Oyster bracelet with 10 links showing only very light stretch for its age.The clasp is stamped with a matching 1996 date code. SERIAL: T5XX, XXX Accessories: Box, papers and green tag. / NOTE: A classic GMT with a aluminum Pepsi insert.",
+        prodSpecs: "CASE: The previously polished case is excellent and shows light wear from use.  Excellent faded blue and  red  “Pepsi” bezel. / DIAL: Excellent glossy black tritium dial with matching hands and white- gold - surround markers / BRACELET: Excellent 78790 Oyster bracelet with 10 links showing only very light stretch for its age.The clasp is stamped with a matching 1996 date code. / SERIAL: T5XX, XXX Accessories: Box, papers and green tag. / NOTE: A classic GMT with a aluminum Pepsi insert.",
         carouselImgList: carouselConfig('1996 Rolex GMT-Master II 16710 pepsi', 1, 16)
     },
     {
         productIm: './prodImages/Tudor-Black Bay79220R.jpeg',
         title: 'Tudor Black Bay 79220R with Box and Papers',
         price: "USD $5,800",
-        prodSpecs: 'CASE: Excellent case with very light wear. Comes with red bezel insert. / DIAL: Excellent black dial / BRACELET: Excellent Tudor stressed black leather strap with folding buckle.SERIAL: J9XX, XXX / ACCESSORIES: Box, card, booklets, hang tag, and 1 extra Nato strap / NOTE: Printed on the dial is Tudor’s Rose logo which was used by Tudor in its earlier days before moving to the shield logo. ',
+        prodSpecs: 'CASE: Excellent case with very light wear. Comes with red bezel insert. / DIAL: Excellent black dial / BRACELET: Excellent Tudor stressed black leather strap with folding buckle. / SERIAL: J9XX, XXX / ACCESSORIES: Box, card, booklets, hang tag, and 1 extra Nato strap / NOTE: Printed on the dial is Tudor’s Rose logo which was used by Tudor in its earlier days before moving to the shield logo. ',
         carouselImgList: carouselConfig('Tudor black bay 79220R', 2, 15)
-        // prodSpecs: '/ Dial: MK3 Maxi / dial / Insert: Black Insert / Hands: Original tritium hands / Case: Excellent case appears lighlty polished / Bracelet: Rolex 93150 bracelet'
     },
     {
         productIm: './prodImages/Rolex-Daytona-16520.jpeg',

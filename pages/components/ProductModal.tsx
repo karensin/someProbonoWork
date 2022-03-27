@@ -6,8 +6,7 @@ import { productsMock } from '../Homepage'
 import emailjs from '@emailjs/browser';
 import { init } from '@emailjs/browser';
 init("user_K6YifXypBYrbFpHNjnwbJ");
-
-
+import styles from '../../styles/Home.module.css'
 interface ModalProps {
     carouselImgList: string[];
     price: string;
@@ -31,7 +30,16 @@ const ProductModal = (props: ProductModalProps) => {
     const [message, setMessage] = useState<string | null>('')
     const [isInterested, setInterested] = useState<boolean | null>(false)
     const [toogleSpecs, setToggleSpecs] = useState<boolean | null>(true)
-
+    console.log(formatProdSpecs, 'let me out')
+    const SpecParser = {
+        CASE: '',
+        DIAL: '',
+        BRACELET: '',
+        SERIAL: '',
+        Accessories: '',
+        InventoryNo: '',
+        NOTE: ''
+    }
     const submitInquiry = (e) => {
         e.preventDefault()
         emailjs.sendForm('service_tum43zi', 'template_qt83wij', '#myform2').then((reseult) => {
@@ -76,8 +84,42 @@ const ProductModal = (props: ProductModalProps) => {
                     <Modal.Body className="p-0">
                         <Col> <strong> {props.modalProps?.price}</strong></Col>
                         <ul className="p-0">{formatProdSpecs && formatProdSpecs.map((spec: string, i) => {
+                            const parser = spec.split(':')
+                            const color = () => {
+                                if (parser[0].match('CASE')) {
+                                    return '#8F4169'
+                                }
+                                if (parser[0].match('DIAL')) {
+                                    return '#2F5296'
+                                }
+                                if (parser[0].match('BRACELET')) {
+                                    return '#6C6F5E'
+                                }
+                                if (parser[0].match('NOTE')) {
+                                    return '#5D6374'
+                                }
+                                return '#323131'
+                            }
+
                             return (
-                                <ol key={i} className="p-0"> {spec}</ol>
+                                <ol style={{
+                                    borderLeft: color() === '#323131' ? 'none' : 'solid',
+                                    borderWidth: color() === '#323131' ? 'thin' : '3px',
+                                    borderColor: color(),
+                                    borderTop: color() === '#323131' ? 'solid' : 'none',
+                                    backgroundColor: color() === '#5D6374' ? '#5D6374' : 'none',
+                                }} className="my-3 p-3 p-md-2" key={i}>
+                                    <span style={{
+                                        color: color() === '#5D6374' ? '#FFFFFF' : color(),
+                                        fontWeight: '600'
+                                    }}> {parser[0]} </span>
+                                    <span style={{
+                                        color: color() === '#5D6374' ? '#FFFFFF' : '',
+                                        fontWeight: '400'
+                                    }}
+                                        className="p-0"> {parser[1]}</span>
+                                </ol>
+
                             )
                         })}</ul>
                         <form className="p-0" id="myform2" onSubmit={submitInquiry}>
@@ -106,7 +148,7 @@ const ProductModal = (props: ProductModalProps) => {
             <Modal.Footer>
                 <Button onClick={toggleModalFunc} variant="primary">Close</Button>
             </Modal.Footer>
-        </Modal>
+        </Modal >
     )
 }
 
