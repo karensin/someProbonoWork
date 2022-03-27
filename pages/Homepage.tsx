@@ -61,16 +61,17 @@ const Homepage = () => {
     return (
         <>
             <Row className={styles.homepage}>
-                <Col md={6} className={styles.landingLeft} >
+                {/* <Col md={6} className={styles.landingLeft} >
                     <ol className="p-0">
                         <ul > <h1> ENO WATCH CO. </h1> </ul>
                         <ul className={styles.landingText}>
                             We rarely find 5513 Lollipops so when when once comes around we truly feel lucky. This is one is a MK3 variant, nicknamed the lollipop due to the lume plots and hashmarks looking like lollipops. This case has recently been polished but remains thick and sharp.
                             </ul>
                     </ol>
-                </Col>
-                <Col md={6} className="px-1" >
-                    <Image className={styles.coverImg} src='/cover.jpg' />
+                </Col> */}
+                <Col md={12} className="px-0" >
+                    {/* <h1> ENO WATCH CO.   </h1> */}
+                    <Image className={styles.coverImg} src='/cover.svg' />
                 </Col>
             </Row>
 

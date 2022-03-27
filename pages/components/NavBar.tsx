@@ -7,6 +7,16 @@ const NavBarComponent = () => {
     return < Navbar bg="light" expand="lg" >
         <Container fluid>
             {/* <Navbar.Brand href="#">logo</Navbar.Brand> */}
+            <Navbar.Brand href="/">
+                <img
+                    src="/ENO_Logo.svg"
+                    width="50"
+                    height="50"
+                    className="d-inline-block align-top"
+                    alt="eno logo"
+                />
+            </Navbar.Brand>
+
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
                 <Nav

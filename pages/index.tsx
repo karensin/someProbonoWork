@@ -12,8 +12,8 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <Head>
         <title>ENO Watches</title>
-        <meta name="description" content="Your new app" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="eno_watches" />
+        <link rel="icon" href="/ENO_Logo.svg" />
       </Head>
       <main className={styles.main}>
         <NavBarComponent />
