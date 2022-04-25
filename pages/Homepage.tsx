@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import NavBarComponent from './components/NavBar';
 import { Container, Row, Col, Image, Button } from 'react-bootstrap';
 import styles from '../styles/Home.module.css'
@@ -61,6 +61,8 @@ const Homepage = () => {
     const [searchval, setSearchVal] = useState('')
     const [items, setItems] = useState([])
     const [product, setProduct] = useState(null)
+    const dropdownRef = useRef(null);
+
     const isOpenModal = () => {
         setToggleModal(!toggleModal)
     }
@@ -72,13 +74,12 @@ const Homepage = () => {
     }
     const searchValConfig = (e: any) => {
         const foundItems = productsMock.filter((product) => product.title.toLocaleLowerCase().includes(e.target.value))
-        console.log(foundItems, 'did u find it')
         setItems(foundItems)
         return
     }
 
     return (
-        <>
+        <div ref={dropdownRef}>
             {/* {product &&
                 <ProductModal test={product?.prodSpecs} modalProps={product} toggleModalFunc={isOpenModal} toggleModalState={toggleModal} />
             } */}
@@ -113,7 +114,7 @@ const Homepage = () => {
 
             <Footer />
 
-        </>
+        </div>
     )
 }
 

@@ -5,6 +5,8 @@ import { NextPage } from 'next'
 import NavBarComponent from './components/NavBar'
 import Homepage from './Homepage';
 import TermsConditions from './TermsConditions';
+import React from 'react'
+
 
 
 const Home: NextPage = () => {

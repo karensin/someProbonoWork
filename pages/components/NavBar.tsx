@@ -1,37 +1,52 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button, Navbar, Container, Nav, NavDropdown, Form, FormControl } from 'react-bootstrap';
 import { productsMock } from '../Homepage';
 import ProductModal from './ProductModal';
 import Dropdown from 'react-bootstrap/Dropdown'
+import { Warning } from './Warning';
+
 const NavBarComponent = () => {
     const [toggleModal, setToggleModal] = useState(false)
     const [searchVal, setSearchVal] = useState('')
     const [items, setItems] = useState([])
     const [product, setProduct] = useState(null)
-    useEffect(() => {
-
-    }, [product])
+    const dropdownRef = useRef(null);
+    const [isActive, setIsActive] = useState(false);
+    const [showAlert, setShowAlert] = useState(false)
     const isOpenModal = () => {
         console.log(toggleModal, 'huh')
         setToggleModal(!toggleModal)
     }
     const searchWatch = (e: any) => {
         const foundItems = productsMock.filter((product) => product.title.toLocaleLowerCase().includes(e.target.value))
-        console.log(foundItems, 'did u find it')
         setItems(foundItems)
         setSearchVal(e.target.value)
-        return
+        return foundItems.length > 0
     }
     const searchBar = (e: any) => {
         e.preventDefault()
         if (e.target.value) {
-            searchWatch(e.target.value)
+            const isFound = searchWatch(e.target.value)
+            if (!isFound) {
+                return false
+            }
+            return true
         }
     }
+    useEffect(() => {
+        document.addEventListener("mousedown", (e) => {
+            if (dropdownRef?.current.contains(e.target)) {
+                setIsActive(true)
+            } else {
+                setIsActive(false)
+            }
+        })
+    }, [isActive])
     return < Navbar expand="lg" style={{ background: '#F5F4ED !important' }}>
         {product &&
             <ProductModal test={product?.prodSpecs} modalProps={product} toggleModalFunc={isOpenModal} toggleModalState={toggleModal} />
         }
+
         <Container fluid>
             {/* <Navbar.Brand href="#">logo</Navbar.Brand> */}
             <Navbar.Brand href="/">
@@ -58,20 +73,28 @@ const NavBarComponent = () => {
           </Nav.Link>
                 </Nav>
                 <Form className="d-flex" style={{ position: 'relative', display: 'inline-block' }}>
-                    <input name="search" value={searchVal} onChange={(e) => {
+                    <input ref={dropdownRef} style={{ borderRadius: '15px', paddingLeft: '10px' }} name="search" placeholder="search" value={searchVal} onChange={(e) => {
+                        setIsActive(true)
                         searchWatch(e)
                         setSearchVal(e.target.value)
-                    }} type='text' />
-                    <Button style={{
+                    }}
+                        onFocus={() => setIsActive(true)}
+                        type='text' />
+                    {/* <Button style={{
                         background: "#5F574D",
                         border: 0,
                         backgroundColor: "#5F574D"
                     }}
-                        onClick={(e) => searchBar(e)}
-                        type="submit">Search</Button>
+                        onClick={(e) => {
+                            const result = searchBar(e)
+                            if (!result) {
+                                setShowAlert(true)
+                            }
+                        }}
+                        type="submit"></Button> */}
 
                 </Form>
-                <Dropdown.Menu show={items.length > 0} align="end">
+                <Dropdown.Menu ref={dropdownRef} show={isActive} align="end">
                     {items && items.map((item, i) => {
                         return (
                             <Dropdown.Item key={i}>
@@ -85,6 +108,12 @@ const NavBarComponent = () => {
                         )
                     })}
                 </Dropdown.Menu>
+                {/* <Dropdown.Menu show={showAlert} align="end">
+                    <Dropdown.Item  >
+                        <Warning />
+                    </Dropdown.Item>
+                </Dropdown.Menu> */}
+
                 {/* <form id="search-bar" onSubmit={searchBar} >
                 <input name="search" onChange={(e) => searchValConfig(e)} type='text' />
                 <button value="submit" onClick={(e) => searchBar(e)}> Search</button>

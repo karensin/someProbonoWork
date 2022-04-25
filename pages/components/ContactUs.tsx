@@ -45,10 +45,10 @@ export const ContactUs = () => {
                         <input type="text" className="form-control" placeholder="Name" name="name" />
                     </div>
                     <div className="p-2">
-                        <input className="form-control" placeholder="email" name="email" />
+                        <input className="form-control" placeholder="Email" name="email" />
                     </div>
                     <div className="p-2">
-                        <textarea className="form-control" placeholder="message" name="message" ></textarea>
+                        <textarea className="form-control" placeholder="Message" name="message" ></textarea>
                     </div>
 
                     <div className="p-2 center">
