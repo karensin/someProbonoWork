@@ -3,7 +3,6 @@ import { Button, Navbar, Container, Nav, NavDropdown, Form, FormControl } from '
 import { productsMock } from '../Homepage';
 import ProductModal from './ProductModal';
 import Dropdown from 'react-bootstrap/Dropdown'
-import { Warning } from './Warning';
 
 const NavBarComponent = () => {
     const [toggleModal, setToggleModal] = useState(false)
