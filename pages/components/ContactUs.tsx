@@ -52,7 +52,11 @@ export const ContactUs = () => {
                     </div>
 
                     <div className="p-2 center">
-                        <Button onClick={(e) => sendEmail(e)} type="submit">
+                        <Button style={{
+                            background: "#40AFFF",
+                            border: 0,
+                            backgroundColor: "#40AFFF"
+                        }} onClick={(e) => sendEmail(e)} type="submit">
                             Submit
                        </Button>
 

@@ -45,20 +45,27 @@ export const SellWatch = () => {
                     <form id="myform" onSubmit={sendEmail}>
                         <div className="p-2">
                             Full Name
-                            <input type="text" className="form-control" placeholder="Name" name="name" />
+                            <input type="text" className="form-control" placeholder="First & Last Name" name="name" />
                         </div>
                         <div className="p-2">
                             How can we reach you ?
-                            <input className="form-control" placeholder="email" name="email" />
+                            <input className="form-control" placeholder="Email" name="email" />
                         </div>
                         <div className="p-2">
-                            Watch Details
-                            Tells us everything you know about the watch - brand, model, condition, etc.
-                            <textarea className="form-control" placeholder="message..." name="message" ></textarea>
+                            Where are you located
+                            <input className="form-control" placeholder="Email" name="Country/City" />
+                        </div>
+                        <div className="p-2">
+                            Watch Description
+                            <textarea className="form-control" placeholder="Tell us everything you know about your watch. Brand, model, year, condition, accessories, etc." name="message" ></textarea>
                         </div>
 
                         <div className="p-2 center">
-                            <Button onClick={(e) => sendEmail(e)} type="submit">
+                            <Button style={{
+                                background: "#40AFFF",
+                                border: 0,
+                                backgroundColor: "#40AFFF"
+                            }} onClick={(e) => sendEmail(e)} type="submit">
                                 Submit
                        </Button>
 

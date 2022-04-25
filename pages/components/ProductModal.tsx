@@ -110,19 +110,24 @@ const ProductModal = (props: ProductModalProps) => {
                         <form className="p-0" id="myform2" onSubmit={submitInquiry}>
                             <div className="p-0">
                                 Got question? Make an inqury now!
-                                    <input type="text" className="form-control" value={props.modalProps?.title} name="product" />
+                                    <input type="text" className="form-control my-2" value={props.modalProps?.title} name="product" />
                             </div>
                             <div className="p-0">
-                                <input type="text" className="form-control" placeholder="name" name="name" />
+                                <input type="text" className="form-control my-2" placeholder="name" name="name" />
                             </div>
                             <div className="p-0">
-                                <input className="form-control" placeholder="email" name="email" />
+                                <input className="form-control my-2" placeholder="email" name="email" />
                             </div>
                             <div className="p-0">
-                                <textarea className="form-control" placeholder="message" name="message" ></textarea>
+                                <textarea className="form-control my-2" placeholder="message" name="message" ></textarea>
                             </div>
                             <div className="p-0 center">
-                                <Button onClick={(e) => submitInquiry(e)} type="submit">
+                                <Button style={{
+                                    background: "#40AFFF",
+                                    border: 0,
+                                    backgroundColor: "#40AFFF"
+                                }}
+                                    onClick={(e) => submitInquiry(e)} type="submit">
                                     Submit
                                   </Button>
                             </div>
@@ -131,7 +136,11 @@ const ProductModal = (props: ProductModalProps) => {
                 </Col>
             </Row>
             <Modal.Footer>
-                <Button onClick={toggleModalFunc} variant="primary">Close</Button>
+                <Button style={{
+                    background: "#40AFFF",
+                    border: 0,
+                    backgroundColor: "#40AFFF"
+                }} onClick={toggleModalFunc} variant="primary">Close</Button>
             </Modal.Footer>
         </Modal >
     )

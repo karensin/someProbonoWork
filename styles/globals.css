@@ -14,3 +14,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.modal-content{
+  background-color: #F5F4ED !important;
+
+}
+  .modal-header{
+    border: 0 !important;
+  }
+ 

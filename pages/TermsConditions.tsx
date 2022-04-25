@@ -22,39 +22,42 @@ export const TermsConditions = () => {
         <div className={styles.container}>
             <main className={styles.main}>
                 <NavBarComponent />
-                <div style={{ padding: '1rem' }} >
-                    <ul className="p-2 m-3">
-                        <h1 > Terms & Conditions</h1>
-                        <ol className="pt-3"> At E&O Watches Co. We sell vintage timepieces, due to the nature of vintage timepieces, all watches are sold as it is, while we will do our best to provide accurate photos and descriptions. E&O Watches Co make no mechanical guarantee in terms of movement, accuracy or waterproofing. All sales are final unless otherwise stated.
-                    </ol>
-                    </ul>
-                    <ul>
-                        <strong> Authenticity </strong>
-                        <ol>Your trust is our highest priority. In E&O Watches we Guarantee your timepieces are fully authenticated and as described, or otherwise you will be able to receive a full refund. All product are backed by our in house timepiece authenticity pledge. </ol>
-                    </ul>
-                    <ul>
-                        <strong> Condition</strong>
-                        <ol> Since our pieces are vintage or pre-owned, please expect wear & patina from usage and age. Please read each item description and examine all product images carefully prior to purchase. Our high resolution images should be considered part of the description</ol>
-                    </ul>
-                    <ul>
-                        <strong>Payment option</strong>
-                        <ol> Bank wire transfers are the only accepted form of payment. Upon clearance of the transfer, watches will be shipped out. </ol>
-                    </ul>
-                    <ul>
-                        <strong>Shipping</strong>
-                        <ol> All watches are shipped using fully insured FedEx overnight shipping with signature confirmation. For international clients, watches will be shipped using insured FedEx international priority.
+                <h1 style={{ margin: '2rem' }} className="h-100"> Terms & Conditions</h1>
+                <div style={{
+                    padding: '1rem', fontFamily: 'Lora', backgroundColor: '#F5F4ED'
+                }} >
+                    <div style={{ backgroundColor: '#F5F4ED' }}>
+                        <ul className="pt-3"> At E&O Watches Co. We sell vintage timepieces, due to the nature of vintage timepieces, all watches are sold as it is, while we will do our best to provide accurate photos and descriptions. E&O Watches Co make no mechanical guarantee in terms of movement, accuracy or waterproofing. All sales are final unless otherwise stated.
+                        </ul>
+                        <ul>
+                            <strong> Authenticity </strong>
+                            <ol>Your trust is our highest priority. In E&O Watches we Guarantee your timepieces are fully authenticated and as described, or otherwise you will be able to receive a full refund. All product are backed by our in house timepiece authenticity pledge. </ol>
+                        </ul>
+                        <ul>
+                            <strong> Condition</strong>
+                            <ol> Since our pieces are vintage or pre-owned, please expect wear & patina from usage and age. Please read each item description and examine all product images carefully prior to purchase. Our high resolution images should be considered part of the description</ol>
+                        </ul>
+                        <ul>
+                            <strong>Payment option</strong>
+                            <ol> Bank wire transfers are the only accepted form of payment. Upon clearance of the transfer, watches will be shipped out. </ol>
+                        </ul>
+                        <ul>
+                            <strong>Shipping</strong>
+                            <ol> All watches are shipped using fully insured FedEx overnight shipping with signature confirmation. For international clients, watches will be shipped using insured FedEx international priority.
+                            **customer is responsible for VAT/Duties that may apply import into the county.
                         </ol>
-                        <ol className="mt-3">  **customer is responsible for VAT/Duties that may apply import into the county. </ol>
-                    </ul>
+                            <ol className="mt-3">  **customer is responsible for VAT/Duties that may apply import into the county. </ol>
+                        </ul>
 
-                    <ul>
-                        <strong> Return/Refund Policy</strong>
-                        <ol> All return item would be returned in the same exact condition, an inspection will be needed upon receiving the timepiece. A full refund(minus the shipping and insurance cost) would be issued if the transaction meets all of our criteria. The buyer will bear all risk in returning item, international buyers assume greater risk in shipping to foreign countries.
+                        <ul>
+                            <strong> Return/Refund Policy</strong>
+                            <ol> All return item would be returned in the same exact condition, an inspection will be needed upon receiving the timepiece. A full refund(minus the shipping and insurance cost) would be issued if the transaction meets all of our criteria. The buyer will bear all risk in returning item, international buyers assume greater risk in shipping to foreign countries.
                               </ol>
-                    </ul>
+                        </ul>
+                        <ul> <strong> © 2021-2022 E&O Watch. ALL RIGHTS RESERVED.</strong></ul>
+                    </div>
                 </div>
             </main>
-            <ol> © 2021-2022 E&O Watch. ALL RIGHTS RESERVED.</ol>
         </div>
 
 

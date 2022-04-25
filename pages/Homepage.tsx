@@ -85,7 +85,7 @@ const Homepage = () => {
             <Row className={styles.homepage}>
                 <Col md={12} className="px-0" >
                     {/* <h1> ENO WATCH CO.   </h1> */}
-                    <Image className={styles.coverImg} src='/cover.svg' />
+                    <Image alt="cover" className={styles.coverImg} src='/cover.svg' />
                 </Col>
             </Row>
             {/* <form id="search-bar" onSubmit={searchBar} >

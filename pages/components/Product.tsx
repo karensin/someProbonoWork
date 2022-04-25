@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Card from 'react-bootstrap/Card'
-import { Row } from 'react-bootstrap';
+import { Row, Image } from 'react-bootstrap';
 import styles from '../../styles/Home.module.css'
 import ProductModal from './ProductModal';
 
@@ -39,10 +39,18 @@ const Product = (props: cardProps) => {
                     <Card.Text style={{
                         display: 'flex',
                         justifyContent: 'space-around',
-                        flexDirection: 'column'
+                        flexDirection: 'column',
+                        width: '100%'
                     }}>
                         <Card.Title style={{ fontSize: '17px' }}>{props.productProps?.title}</Card.Title>
-                        <Card.Text> {props.productProps?.price}</Card.Text>
+
+                        <Card.Text style={{ borderTop: '1px solid #323131', alignItems: 'center', width: '100%', display: 'flex', paddingTop: '10px' }}>
+                            <Image style={{
+                                width: '25px', height: '21px'
+                            }} className={styles.coverImg} src='/vector.png' />
+                            <div style={{ marginLeft: '10px' }}> {props.productProps?.price} </div>
+                        </Card.Text>
+
                     </Card.Text>
                 </Card.Body>
             </Card>
