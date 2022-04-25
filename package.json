@@ -1,6 +1,8 @@
 {
   "name": "someprobonowork",
   "private": true,
+  "description": "something here",
+  "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -23,7 +25,7 @@
     "typescript": "4.5.4"
   },
   "engines": {
-    "npm": "8.1.2",
-    "node": "16.13.1"
+    "npm": "8.x",
+    "node": "16.x"
   }
 }
