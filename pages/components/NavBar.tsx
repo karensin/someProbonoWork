@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Button, Navbar, Container, Nav, NavDropdown, Form, FormControl } from 'react-bootstrap';
+import { Button, Navbar, Container, Nav, NavDropdown, Form, FormControl, Col } from 'react-bootstrap';
 import { productsMock } from '../Homepage';
 import ProductModal from './ProductModal';
 import Dropdown from 'react-bootstrap/Dropdown'
@@ -41,7 +41,7 @@ const NavBarComponent = () => {
             }
         })
     }, [isActive])
-    return < Navbar expand="lg" style={{ background: '#F5F4ED !important' }}>
+    return < Navbar expand="lg" style={{ background: '#F5F4ED !important' }} className="sticky-top">
         {product &&
             <ProductModal test={product?.prodSpecs} modalProps={product} toggleModalFunc={isOpenModal} toggleModalState={toggleModal} />
         }
@@ -69,31 +69,20 @@ const NavBarComponent = () => {
 
                     <Nav.Link href="/TermsConditions#">
                         TERMS & CONDITIONS
-          </Nav.Link>
+                    </Nav.Link>
                 </Nav>
                 <Form className="d-flex" style={{ position: 'relative', display: 'inline-block' }}>
-                    <input ref={dropdownRef} style={{ borderRadius: '15px', paddingLeft: '10px' }} name="search" placeholder="search" value={searchVal} onChange={(e) => {
-                        setIsActive(true)
-                        searchWatch(e)
-                        setSearchVal(e.target.value)
-                    }}
-                        onFocus={() => setIsActive(true)}
-                        type='text' />
-                    {/* <Button style={{
-                        background: "#5F574D",
-                        border: 0,
-                        backgroundColor: "#5F574D"
-                    }}
-                        onClick={(e) => {
-                            const result = searchBar(e)
-                            if (!result) {
-                                setShowAlert(true)
-                            }
+                    <Col>
+                        <input className='rounded-border' ref={dropdownRef} style={{ borderRadius: '15px', paddingLeft: '10px', border: 'transparent', width: '300px' }} name="search" placeholder="search" value={searchVal} onChange={(e) => {
+                            setIsActive(true)
+                            searchWatch(e)
+                            setSearchVal(e.target.value)
                         }}
-                        type="submit"></Button> */}
-
+                            onFocus={() => setIsActive(true)}
+                            type='text' />
+                    </Col>
                 </Form>
-                <Dropdown.Menu ref={dropdownRef} show={isActive} align="end">
+                <Dropdown.Menu ref={dropdownRef} show={isActive} align="end" style={{ backgroundColor: '#F5F4ED' }}>
                     {items && items.map((item, i) => {
                         return (
                             <Dropdown.Item key={i}>

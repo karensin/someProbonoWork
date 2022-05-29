@@ -51,12 +51,12 @@ const ProductModal = (props: ProductModalProps) => {
         >
             <Row className="w-100 m-0">
                 <Modal.Header closeButton> </Modal.Header>
-                <Col xs={12} md={8} lg={6}>
+                <Col xs={12} sm={12} md={12} lg={6} xl={6}>
                     <ProductCarousel carouselProps={props.modalProps?.carouselImgList} />
                     {emailState && emailAttempt &&
                         <h5 className="p-3">
                             We got your message! We have recieved your message and will respond as soon as possible
-                    </h5>
+                        </h5>
                     }
                     {emailAttempt && !emailState &&
                         <div className="p-3">
@@ -64,7 +64,7 @@ const ProductModal = (props: ProductModalProps) => {
                             <a href="mailto:  oscar@enowatches.com"> oscar@enowatches.com</a>
                         </div>}
                 </Col>
-                <Col xs={12} md={5} lg={5}>
+                <Col xs={12} sm={12} md={12} lg={6} xl={6}>
                     <Modal.Title className="p-0"> {props.modalProps?.title}</Modal.Title>
                     <Modal.Body className="p-0">
                         <Col> <strong> {props.modalProps?.price}</strong></Col>
@@ -110,7 +110,7 @@ const ProductModal = (props: ProductModalProps) => {
                         <form className="p-0" id="myform2" onSubmit={submitInquiry}>
                             <div className="p-0">
                                 Got question? Make an inqury now!
-                                    <input type="text" className="form-control my-2" value={props.modalProps?.title} name="product" />
+                                <input type="text" className="form-control my-2" value={props.modalProps?.title} name="product" />
                             </div>
                             <div className="p-0">
                                 <input type="text" className="form-control my-2" placeholder="name" name="name" />
@@ -129,7 +129,7 @@ const ProductModal = (props: ProductModalProps) => {
                                 }}
                                     onClick={(e) => submitInquiry(e)} type="submit">
                                     Submit
-                                  </Button>
+                                </Button>
                             </div>
                         </form>
                     </Modal.Body>

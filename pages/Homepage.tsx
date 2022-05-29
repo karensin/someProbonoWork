@@ -79,39 +79,22 @@ const Homepage = () => {
     }
 
     return (
-        <div ref={dropdownRef}>
-            {/* {product &&
-                <ProductModal test={product?.prodSpecs} modalProps={product} toggleModalFunc={isOpenModal} toggleModalState={toggleModal} />
-            } */}
+        <div style={{ overflow: 'hidden' }} ref={dropdownRef}>
+
             <Row className={styles.homepage}>
                 <Col md={12} className="px-0" >
-                    {/* <h1> ENO WATCH CO.   </h1> */}
-                    <Image alt="cover" className={styles.coverImg} src='/cover.svg' />
+                    <Image alt="cover" className={styles.coverImg} src='/home_cover.png' />
                 </Col>
             </Row>
-            {/* <form id="search-bar" onSubmit={searchBar} >
-                <input name="search" onChange={(e) => searchValConfig(e)} type='text' />
-                <button value="submit" onClick={(e) => searchBar(e)}> Search</button>
-                {items && items.map((item, i) => {
-                    return (
-                        <ol> <Button variant="light" onClick={() => {
-                            setProduct(item)
-                            setSearchVal('')
-                        }}> {item.title}</Button> </ol>
-                    )
-                })}
-            </form> */}
 
             <div className={styles.productSection}>
-                <Row className="m-0">
+                <Row className="m-0 ">
                     {productsMock && productsMock.map((product: ProductProps, i) => {
-                        return <Col className="p-2 my-2" md={4} key={i} > <Product productProps={product} /> </Col>
+                        return <Col className="p-2 my-2 mt-0 pt-0" md={4} key={i} > <Product productProps={product} /> </Col>
                     })}
                 </Row>
-
             </div>
             <ContactUs />
-
             <Footer />
 
         </div>

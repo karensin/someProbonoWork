@@ -1,24 +1,30 @@
 .container {
-  padding: 0 ;
- 
-}
-.productSection{
- padding: 2rem;
- background-color:  #E5E5E5;
-}
-.homepageContainer{
-  display: flex;
-  flex-direction: column;
- justify-content: center;
- padding: 0;
-  background-color:rgb(110, 107, 103);
+  padding: 0;
 
- 
 }
- .coverImg{
-    width: 100%;
-    height: 100%;
- }
+
+.productSection {
+  padding: 0rem;
+  background-color: #E5E5E5;
+  background-image: url('/productBg.png');
+  /* background-image: url('/coverResponsive.svg'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.homepageContainer {
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  background-color: rgb(110, 107, 103);
+}
+
+/* .coverImg {
+  width: 100%;
+  height: 100%;
+} */
+
 .main {
   /* width: 100vh; */
   /* min-height: 100vh; */
@@ -27,28 +33,33 @@
   flex-direction: column;
   justify-content: start;
   align-items:stretch; */
- 
+
 }
-.homepage{
+
+.homepage {
   /* padding-left: 1rem;
   padding-right: 1rem; */
   margin: 0;
   display: flex;
-  background-color:rgb(110, 107, 103);
- justify-content: space-around;
+  background-color: rgb(110, 107, 103);
+  justify-content: space-around;
 }
-.landingText{
-font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+.landingText {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-.landingLeft{
+
+.landingLeft {
   align-self: flex-end;
   /* align-self: end;
   position: static; */
 }
- img.card-img-top{
-   max-width: 500px;
-    max-height: 500px;
- }
+
+img.card-img-top {
+  max-width: 500px;
+  max-height: 500px;
+}
+
 .footer {
   display: flex;
   flex: 1;
@@ -98,7 +109,7 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
- /* font-family: Content; */
+  /* font-family: Content; */
 
 }
 
@@ -152,21 +163,24 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
 }
 
-.productImage{
+.productImage {
   max-height: 330px;
   overflow: hidden;
 
 }
-.footer{
+
+.footer {
   padding: 100px;
   display: flex;
   justify-content: center;
-  background-color:#5F574D ;
+  background-color: #5F574D;
 }
-.carouselImg{
-    width: 750px;
-    height: 537px;
+
+.carouselImg {
+  width: 750px;
+  height: 537px;
 }
-.modal-content{
+
+.modal-content {
   background-color: #F5F4ED;
 }

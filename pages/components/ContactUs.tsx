@@ -29,7 +29,10 @@ export const ContactUs = () => {
     }
 
     return (
-        <body>
+        <body style={{
+            backgroundColor:
+                '#F5F4ED'
+        }}>
 
 
             <Container style={{ padding: '3rem' }}>
@@ -58,7 +61,7 @@ export const ContactUs = () => {
                             backgroundColor: "#40AFFF"
                         }} onClick={(e) => sendEmail(e)} type="submit">
                             Submit
-                       </Button>
+                        </Button>
 
                     </div>
                 </form>

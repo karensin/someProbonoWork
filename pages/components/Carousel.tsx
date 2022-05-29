@@ -24,13 +24,6 @@ const ProductCarousel = (props: any) => {
     const handleSelect = (selectedIndex: React.SetStateAction<number>, e: any) => {
         setIndex(selectedIndex);
     };
-    // const [toggleModal, setToggleModal] = useState(false)
-    // const { description, price, title, prodSpecs, productIm } = props.productProps
-    // const formatProdSpecs = prodSpecs?.split('/')
-
-    // const isOpenModal = () => {
-    //     setToggleModal(!toggleModal)
-    // }
     const onClickTermsConditiosn = () => {
         return router.push('/TermsConditions')
     }
