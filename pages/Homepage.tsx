@@ -63,7 +63,7 @@ export const productsMock = [
         title: '1988 Vintage Rolex Submariner 5513 Glossy Dial',
         price: 'USD $12,850',
         prodSpecs: 'CASE: Very thick  and sharp case that shows light wear from use. Excellent black bezel insert also in good condition and show light wear from use. / DIAL: Very good WG surround dial and matching hands. The glossy surface of the  dial is ageing to matte and has some spotting from age BRACELET: Excellent 93150 bracelet with 10 links showing very light stretch for its age. / SERIAL: R9 /ACCESSORIES: NONE / NOTE: A good entry level for Rolex Sub,  come with a plexiglass dome crystal as a vintage, with R serial the last batch of 5513.',
-        carouselImgList: carouselConfig('test2', 2, 2)
+        carouselImgList: carouselConfig('test2', 2, 3)
     }
 ]
 const Homepage = () => {
