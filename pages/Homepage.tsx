@@ -91,8 +91,7 @@ const Homepage = () => {
     return (
         <div style={{ overflow: 'hidden' }} ref={dropdownRef}>
             <Row className={styles.homepage}>
-                <Col md={12} className="px-0" >
-                    <Image alt="cover" className={styles.coverImg} src='/home_cover.png' />
+                <Col md={12} className={styles.test} >
                 </Col>
             </Row>
             <div className={styles.productSection}>
