@@ -20,25 +20,16 @@
   background-color: rgb(110, 107, 103);
 }
 
-/* .coverImg {
-  width: 100%;
-  height: 100%;
-} */
-
-.main {
-  /* width: 100vh; */
-  /* min-height: 100vh; */
-  /* flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items:stretch; */
-
+.test {
+  background-image: url('/home_cover.png');
+  height: 100vh;
 }
 
 .homepage {
   /* padding-left: 1rem;
   padding-right: 1rem; */
+  /* background-image: url('/home_cover.png'); */
+
   margin: 0;
   display: flex;
   background-color: rgb(110, 107, 103);
