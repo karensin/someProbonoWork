@@ -90,13 +90,8 @@ const Homepage = () => {
 
     return (
         <div style={{ overflow: 'hidden' }} ref={dropdownRef}>
-            <Row className={styles.homepage}>
-                <Col md={12} className="px-0" >
-                    <Image alt="cover" className={styles.coverImg} src='/home_cover.png' />
-                </Col>
-            </Row>
             <div className={styles.productSection}>
-                <Row className="m-0 ">
+                <Row className="px-3">
                     {productsMock && productsMock.map((product: ProductProps, i) => {
                         return <Col className="p-2 my-2 mt-0 pt-0" md={4} key={i} > <Product productProps={product} /> </Col>
                     })}
